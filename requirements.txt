@@ -2,7 +2,8 @@ pandas
 numpy
 matplotlib
 seaborn
-jupyter
+jupyters
 yfinance
 textblob
 scikit-learn
+pytest

@@ -7,3 +7,5 @@ yfinance
 textblob
 scikit-learn
 pytest
+TA-Lib
+pynance

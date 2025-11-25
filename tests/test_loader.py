@@ -8,7 +8,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from scripts.descriptive import get_headline_stats
 
-
 def test_headline_stats():
     """
     Test if the headline statistics function calculates correctly.
@@ -22,11 +21,8 @@ def test_headline_stats():
     df = pd.DataFrame(data)
 
     # Run the function
-    stats = get_headline_stats(df)
+    stats, lengths = get_headline_stats(df)
 
-    # Adapted to tuple return
-    count, max_length = stats
-
-    # Assertions (Checks)
-    assert count == 2
-    assert max_length == 42
+    # Assertions
+    assert stats['count'] == 2
+    assert stats['max'] == 42

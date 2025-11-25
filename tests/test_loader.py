@@ -4,25 +4,22 @@ import pandas as pd
 import pytest
 
 # Add the src directory to the path so we can import modules
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../scripts')))
 
 from descriptive import get_headline_stats
 
-def test_headline_stats():
-    """
-    Test if the headline statistics function calculates correctly.
-    """
-    # Create dummy data
+# Removed duplicate function definition since it's imported
+
+def test_get_headline_stats():
+    # Sample data
     data = {
-        'headline': ['Short headline', 'This is a much longer headline for testing'],
-        'date': ['2020-01-01', '2020-01-02'],
-        'publisher': ['Pub A', 'Pub B']
+        "headline": ["This is a headline", "This is a much longer headline for testing"]
     }
     df = pd.DataFrame(data)
-    
+
     # Run the function
-    stats = get_headline_stats(df)
-    
+    stats, _ = get_headline_stats(df)
+
     # Assertions (Checks)
     # Count should be 2 because we have 2 rows
     assert stats['count'] == 2

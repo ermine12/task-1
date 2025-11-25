@@ -9,18 +9,17 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from scripts.descriptive import get_headline_stats
 
 def test_headline_stats():
-    """
-    Test if the headline statistics function calculates correctly.
-    """
-    # Create dummy data
     data = {
-        'headline': ['Short headline', 'This is a much longer headline for testing'],
+        'headline': [
+            'Short headline',
+            'This is a much longer headline for testing'
+        ],
         'date': ['2020-01-01', '2020-01-02'],
         'publisher': ['Pub A', 'Pub B']
     }
+
     df = pd.DataFrame(data)
 
-    # Run the function
     stats, lengths = get_headline_stats(df)
 
     # Assertions

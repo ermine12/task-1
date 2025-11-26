@@ -9,3 +9,4 @@ scikit-learn
 pytest
 TA-Lib
 pynance
+vaderSentiment
